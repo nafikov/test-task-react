@@ -18,7 +18,8 @@ class App extends Component {
       <Wrapper>
         <AddItem />
         <Navigation />
-        <Content />
+        {/*<Content />*/}
+        <Route exact path='/tabs/:id' component={Content} />
         <Switch>
           {/*<Route exact path='/departments' component={Departments} />*/}
           {/*<Route exact path='/employees' component={Employees} />*/}
