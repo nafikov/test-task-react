@@ -29,18 +29,20 @@ class AddItem extends Component {
 
   submitHandler(e) {
     e.preventDefault();
-    // console.log(e.target.check.checked);  Получаем checked значение true/false
+    // console.log(e.target..checked);  Получаем checked значение true/false
     // console.log(e.target.tab.value);
 
     let entry = {};
     entry.name = e.target.name.value;
     entry.tab = e.target.tab.value;
+    entry.id = Date.now();
     this.props.addEntry(entry);
 
     e.target.name.value = '';
     e.target.tab.value = '';
-
   }
+
+
 
   render() {
     return (
@@ -73,18 +75,6 @@ function mapDispatchToProps(dispatch) {
   return {
     addEntry: (entry) => {
       dispatch({type: 'ADD_ENTRY', entry: entry})
-    },
-    addEmployee: (emp) => {
-      dispatch({type: 'ADD_EMPLOYEE', employee: emp})
-    },
-    removeEmployee: (id) => {
-      dispatch({type: 'REMOVE_EMPLOYEE', id: id})
-    },
-    cancelEditEmployee: (id) => {
-      dispatch({type: 'CANCEL_EDIT_EMPLOYEE', id: id})
-    },
-    editEmployee: (employee, id) => {
-      dispatch({type: 'EDIT_EMPLOYEE', employee: employee, id: id})
     }
   }
 }
