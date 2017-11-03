@@ -45,7 +45,7 @@ class Content extends Component {
         <List>
           {this.props.entries.filter(e => e.tab === this.props.match.params.id)
             .map(e => (
-            <li key={e.id}><label htmlFor=""><input type="checkbox" id={e.id} onChange={this.checkboxHandler.bind(this)}/>{e.name}</label></li>
+            <li key={e.id}><label><input type="checkbox" id={e.id} onChange={this.checkboxHandler.bind(this)}/>{e.name}</label></li>
           ))}
         </List>
         <button onClick={this.removeEntries.bind(this, this.state.checkedEntries)}>Удалить</button>
