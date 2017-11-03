@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-
 const Wrapper = styled.div`
   //height: 100px;
   //display: flex;

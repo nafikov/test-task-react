@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Navigation from './components/Navigation';
@@ -18,16 +18,7 @@ class App extends Component {
       <Wrapper>
         <AddItem />
         <Navigation />
-        {/*<Content />*/}
         <Route exact path='/tabs/:id' component={Content} />
-        <Switch>
-          {/*<Route exact path='/departments' component={Departments} />*/}
-          {/*<Route exact path='/employees' component={Employees} />*/}
-          {/*/!*<Route exact path='/' component={Navigation} />*!/*/}
-          {/*/!*<Route path='/employees/:id'  render={() => (*!/*/}
-          {/*/!*this.props.activeEmployee ? (<EmployeeEditor/>) : (<Redirect to="/"/>)*!/*/}
-          {/*/!*)} />*!/*/}
-        </Switch>
       </Wrapper>
     );
   }

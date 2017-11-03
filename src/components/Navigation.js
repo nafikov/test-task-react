@@ -27,9 +27,6 @@ class Navigation extends Component {
             {tab.name}
           </NavLink>
         ))}
-        {/*<NavLink to='/departments'>Departments</NavLink>*/}
-        {/*<NavLink to='/employees'>Employees</NavLink>*/}
-        {/*<NavLink to='/tab3'>Tab3</NavLink>*/}
       </Wrapper>
 
     )
@@ -43,5 +40,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(Navigation)
-
-
