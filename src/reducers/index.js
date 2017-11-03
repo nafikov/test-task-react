@@ -3,18 +3,17 @@ const initialState = {
     {
       id: 1,
       name: 'Tab 1',
-      path: '/tabs/1',
-      entries: []
+      path: '/tabs/1'
     },
     {
       id: 2,
       name: 'Tab 2',
       path: '/tabs/2'
-    },{
+    },
+    {
       id: 3,
       name: 'Tab 3',
-      path: '/tabs/3',
-      entries: []
+      path: '/tabs/3'
     },
   ],
   entries: [
