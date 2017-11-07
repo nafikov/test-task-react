@@ -35,11 +35,11 @@ class Content extends Component {
     };
   }
 
-  removeEntries(arr) {
+  removeEntries(entries) {
     this.setState({
-      checkedEntries: this.state.checkedEntries.filter(e => arr.indexOf(e.toString()) === -1)
+      checkedEntries: this.state.checkedEntries.filter(e => entries.indexOf(e.toString()) === -1)
     });
-    this.props.removeEntries(arr);
+    this.props.removeEntries(entries);
   }
 
   checkboxHandler(e) {
