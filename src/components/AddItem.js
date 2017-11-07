@@ -1,39 +1,25 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { BtnPrimary } from './../commons/Button';
 
 const Form = styled.form`
-  height: 100px;
+  height: 60px;
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 const Input = styled.input`
-  // margin-left: 10px;
-  // margin-right: 20px;
   line-height: 22px;
   padding-left: 5px;
 `;
 
 const Select = styled.select`
-  // margin-left: 10px;
-  // margin-right: 20px;
   height: 28px;
   line-height: 22px;
   padding-left: 5px;
-`;
-
-const Button = styled.button`
-  background-color: bisque;
-  padding: 7px 20px;
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  
-  &:hover {
-    background-color: #fff;
-  }
 `;
 
 class AddItem extends Component {
@@ -66,7 +52,7 @@ class AddItem extends Component {
             <option value={tab.id} key={tab.id}>{tab.name}</option>
           ))}
         </Select>
-        <Button type="submit">Добавить</Button>
+        <BtnPrimary type="submit">Добавить</BtnPrimary>
       </Form>
     )
   }

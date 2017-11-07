@@ -16,18 +16,7 @@ const initialState = {
       path: '/tabs/3'
     },
   ],
-  entries: [
-    {
-      name: 'asdf',
-      tab: '1',
-      id: 1509704877995
-    },
-    {
-      name: 'dddd',
-      tab: '1',
-      id: 1509704881956
-    }
-  ]
+  entries: []
 };
 
 function rootReducer(state = initialState, action) {

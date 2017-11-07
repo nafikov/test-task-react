@@ -5,12 +5,11 @@ import styled from 'styled-components';
 import Navigation from './components/Navigation';
 import AddItem from './components/AddItem';
 import Content from './components/Content';
-import './App.css';
 
 const Wrapper = styled.div`
   width: 600px;
   margin: 100px auto;
-  background-color: darkseagreen;
+  background-color: #fffaf0;
 `;
 
 class App extends Component {
@@ -19,10 +18,10 @@ class App extends Component {
       <Wrapper>
         <AddItem />
         <Navigation />
-          <Switch>
-              <Route exact path='/tabs/:id' component={Content} />
-              <Redirect from="/" to="/tabs/1" />
-          </Switch>
+        <Switch>
+            <Route exact path='/tabs/:id' component={Content} />
+            <Redirect from="/" to="/tabs/1" />
+        </Switch>
       </Wrapper>
     );
   }
