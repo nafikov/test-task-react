@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
@@ -8,9 +8,16 @@ const Tab = styled(NavLink)`
   display: inline-block;
   padding: 10px 20px;
   box-sizing: border-box;
-  background-color: ${props => (props.active ? '#ffa584' : '#D3D3D3')};
+  background-color: #D3D3D3;
   border: 1px solid black;
   text-decoration: none;
+  
+  &:hover {
+    background-color: #a9a9a9;
+  }
+  &.active {
+    background-color: #00bfff;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -19,18 +26,12 @@ const Wrapper = styled.div`
 `;
 
 class Navigation extends Component {
-  constructor() {
-    super();
-    this.state = {
-      activeTab: 1
-    };
-  }
 
   render() {
     return (
       <Wrapper>
         {this.props.tabs.map(tab => (
-          <Tab exact={true} to={tab.path} key={tab.id} active={this.state.activeTab === tab.id} onClick={() => this.setState({activeTab: tab.id})}>
+          <Tab to={tab.path} key={tab.id} activeClassName='active'>
             {tab.name}
           </Tab>
         ))}
@@ -45,4 +46,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Navigation)
+export default withRouter(connect(mapStateToProps)(Navigation))
