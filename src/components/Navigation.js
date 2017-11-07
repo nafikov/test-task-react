@@ -8,8 +8,8 @@ const NavLink = styled(Link)`
   display: inline-block;
   padding: 10px 20px;
   box-sizing: border-box;
-  background-color: #5F9EA0;
-  border-bottom: 1px solid #fff
+  background-color: #D3D3D3;
+  border-bottom: 1px solid #fff;
 `;
 
 const Wrapper = styled.div`
@@ -23,7 +23,7 @@ class Navigation extends Component {
     return (
       <Wrapper>
         {this.props.tabs.map(tab => (
-          <NavLink to={tab.path} key={tab.id}>
+          <NavLink to={tab.path} key={tab.id} activeClassName="active">
             {tab.name}
           </NavLink>
         ))}

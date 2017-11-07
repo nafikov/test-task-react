@@ -9,6 +9,33 @@ const Form = styled.form`
   align-items: center;
 `;
 
+const Input = styled.input`
+  // margin-left: 10px;
+  // margin-right: 20px;
+  line-height: 22px;
+  padding-left: 5px;
+`;
+
+const Select = styled.select`
+  // margin-left: 10px;
+  // margin-right: 20px;
+  height: 28px;
+  line-height: 22px;
+  padding-left: 5px;
+`;
+
+const Button = styled.button`
+  background-color: bisque;
+  padding: 7px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  
+  &:hover {
+    background-color: #fff;
+  }
+`;
+
 class AddItem extends Component {
   currentSelect = null;
 
@@ -32,15 +59,14 @@ class AddItem extends Component {
   render() {
     return (
       <Form onSubmit={this.submitHandler.bind(this)}>
-        <input type="text" name="name" placeholder="Введите задачу" required/>
-        <input type="checkbox" name='check'/>
-        <select name="tab" defaultValue='' onChange={this.selectHandler.bind(this)} required>
+        <Input type="text" name="name" placeholder="Введите задачу" required/>
+        <Select name="tab" defaultValue='' onChange={this.selectHandler.bind(this)} required>
           <option disabled value=''>Выберите вкладку</option>
           {this.props.tabs.map(tab => (
             <option value={tab.id} key={tab.id}>{tab.name}</option>
           ))}
-        </select>
-        <button type="submit">Добавить</button>
+        </Select>
+        <Button type="submit">Добавить</Button>
       </Form>
     )
   }

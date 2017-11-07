@@ -10,6 +10,7 @@ import './App.css';
 const Wrapper = styled.div`
   width: 600px;
   margin: 100px auto;
+  background-color: darkseagreen;
 `;
 
 class App extends Component {
