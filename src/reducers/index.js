@@ -25,7 +25,14 @@ function rootReducer(state = initialState, action) {
       return { ...state, entries: [...state.entries, action.entry]};
     case 'REMOVE_ENTRIES':
       return { ...state, entries: state.entries.filter(entry => {
-        return action.entries.indexOf(entry.id.toString()) === -1;
+        return !(entry.tab === action.tab && entry.checked);
+      })};
+    case 'SELECT_ENTRIES':
+      return { ...state, entries: state.entries.map(entry => {
+        if (entry.id === action.entry.id) {
+          entry.checked = !entry.checked;
+        }
+        return entry;
       })};
     default:
       return state;

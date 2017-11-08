@@ -34,8 +34,9 @@ class AddItem extends Component {
 
     let entry = {};
     entry.name = e.target.name.value;
-    entry.tab = e.target.tab.value;
+    entry.tab = parseInt(e.target.tab.value);
     entry.id = Date.now();
+    entry.checked = false;
     this.props.addEntry(entry);
 
     e.target.name.value = '';
