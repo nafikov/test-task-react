@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, withRouter  } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Navigation from './components/Navigation';
@@ -19,12 +19,12 @@ class App extends Component {
         <AddItem />
         <Navigation />
         <Switch>
-            <Route exact path='/tabs/:id' component={Content} />
-            <Redirect from="/" to="/tabs/1" />
+            <Route path='/tabs/:id' component={Content} />
+            <Redirect from='/' to='/tabs/1' />
         </Switch>
       </Wrapper>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

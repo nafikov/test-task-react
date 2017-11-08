@@ -13,7 +13,7 @@ const store = createStore(rootReducer, composeWithDevTools());
 
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter>
+    <HashRouter basename='/'>
       <App />
     </HashRouter>
   </Provider>
